@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bodycam Overlay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-transparent font-sans select-none">
+  <div id="bodycam" class="hidden absolute top-4 right-4 text-white p-4 rounded-xl space-y-1">
+    <div class="flex items-center justify-between w-full">
+      <img src="https://cdn.discordapp.com/attachments/1308512924691730455/1362910888218202353/NxEr78L.png?ex=68041d2d&is=6802cbad&hm=0751de9368e5421c85d07008321e46cfa8ae1cda29d1a39b2681e1af5aa84c4d&" class="w-10 h-10" alt="Bodycam" />
+      <span class="text-red-500 font-bold animate-pulse">RECORDING...</span>
+    </div>
+    <div class="text-sm text-gray-200">
+      <div id="badge" class="font-medium">Badge: 00000</div>
+      <div id="datetime">01/01/2025 - 12:00:00</div>
+      <div id="unit" class="uppercase tracking-wide">NS BODY 3</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
