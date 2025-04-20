@@ -10,6 +10,7 @@ lua54 'yes'
 
 shared_scripts {
   '@es_extended/imports.lua',
+  '@qb-core/shared/jobs.lua',
   'config.lua',
   '@ox_lib/init.lua', 
 }
@@ -33,4 +34,4 @@ escrow_ignore {
   'config.lua'
 }
 
-dependency "screenshot-basic"
+-- dependency "screenshot-basic" DISABLED " DUE TO FIVEMANAGE "
