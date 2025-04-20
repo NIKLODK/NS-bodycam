@@ -13,7 +13,7 @@ CreateThread(function()
     end
 end)
 
--- Tjek tilladelse
+-- Check Permission
 function IsAllowedToUse()
     local PlayerData
 
@@ -37,7 +37,7 @@ function IsAllowedToUse()
     return Config.AllowedJobs[PlayerData.job.name] == true
 end
 
--- Rigtig dato og tid
+-- Dato & Time
 function GetDateAndTime()
     local year, month, day, hour, minute, second = GetLocalTime()
     local date = string.format("%02d/%02d/%04d", day, month, year)
