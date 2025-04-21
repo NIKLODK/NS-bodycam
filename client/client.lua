@@ -93,4 +93,12 @@ RegisterCommand("togglebodycam", function()
     end
 end)
 
+-- Toggle duty
+RegisterCommand("toggleduty", function()
+    isOnDuty = not isOnDuty
+    local dutyStatus = isOnDuty and "ON" or "OFF"
+    lib.notify({ title = 'Duty Status', description = 'You are now ' .. dutyStatus .. ' duty.', type = isOnDuty and 'success' or 'error' })
+end, false)
+
 RegisterKeyMapping('togglebodycam', 'Toggle Bodycam Recording', 'keyboard', 'F10')
+RegisterKeyMapping('toggleduty', 'Toggle Duty Status', 'keyboard', 'F9')
