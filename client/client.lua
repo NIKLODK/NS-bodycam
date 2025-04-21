@@ -6,10 +6,13 @@ local isBodycamOn = false
 
 -- Framework init
 CreateThread(function()
-    if Config.Framework == 'qb' then
-        Framework = exports['qb-core']:GetCoreObject()
-    elseif Config.Framework == 'esx' then
-        Framework = exports['es_extended']:getSharedObject()
+    while not Framework do
+        if Config.Framework == 'qb' then
+            Framework = exports['qb-core']:GetCoreObject()
+        elseif Config.Framework == 'esx' then
+            Framework = exports['es_extended']:getSharedObject()
+        end
+        Wait(100)
     end
 end)
 
@@ -17,10 +20,20 @@ end)
 function IsAllowedToUse()
     local PlayerData
 
+    if not Framework then
+        print("^1[ERROR] Framework not loaded yet.")
+        return false
+    end
+
     if Config.Framework == 'qb' then
         PlayerData = Framework.Functions.GetPlayerData()
     elseif Config.Framework == 'esx' then
         PlayerData = Framework.GetPlayerData()
+    end
+
+    if not PlayerData or not PlayerData.job then
+        print("^1[ERROR] PlayerData or PlayerData.job is nil.")
+        return false
     end
 
     if Config.ToggleDutyCheck then
@@ -28,7 +41,7 @@ function IsAllowedToUse()
     end
 
     if Config.Debug then
-        print("^3[DEBUG] Job Name: ^7" .. PlayerData.job.name)
+        print("^3[DEBUG] Job Name: ^7" .. tostring(PlayerData.job.name))
         print("^3[DEBUG] On Duty: ^7" .. tostring(PlayerData.job.onduty))
         print("^3[DEBUG] isOnDuty (local): ^7" .. tostring(isOnDuty))
     end
