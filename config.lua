@@ -13,6 +13,9 @@ Config.FiveManageAPIKey = 'APIKEY' -- DOES NOT WORK
 Config.RequireDuty = false 
 Config.ToggleDutyCheck = false 
 
+-- Debug option
+Config.Debug = true
+
 -- Your server name / unit format
 Config.BodycamUnitPrefix = 'NIKLO BODYCAM'
 
