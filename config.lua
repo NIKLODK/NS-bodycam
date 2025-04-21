@@ -14,7 +14,7 @@ Config.RequireDuty = false
 Config.ToggleDutyCheck = false 
 
 -- Debug option
-Config.Debug = true
+Config.Debug = true -- SET TO FALSE FOR DISABLE
 
 -- Your server name / unit format
 Config.BodycamUnitPrefix = 'NIKLO BODYCAM'
