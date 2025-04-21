@@ -27,8 +27,11 @@ function IsAllowedToUse()
         PlayerData.job.onduty = isOnDuty
     end
 
-    print("Player Job: " .. PlayerData.job.name)
-    print("On Duty: " .. tostring(PlayerData.job.onduty))
+    if Config.Debug then
+        print("^3[DEBUG] Job Name: ^7" .. PlayerData.job.name)
+        print("^3[DEBUG] On Duty: ^7" .. tostring(PlayerData.job.onduty))
+        print("^3[DEBUG] isOnDuty (local): ^7" .. tostring(isOnDuty))
+    end
 
     if Config.RequireDuty and not PlayerData.job.onduty then
         return false
@@ -98,7 +101,12 @@ RegisterCommand("toggleduty", function()
     isOnDuty = not isOnDuty
     local dutyStatus = isOnDuty and "ON" or "OFF"
     lib.notify({ title = 'Duty Status', description = 'You are now ' .. dutyStatus .. ' duty.', type = isOnDuty and 'success' or 'error' })
+
+    if Config.Debug then
+        print("^3[DEBUG] Toggled duty status. New isOnDuty: ^7" .. tostring(isOnDuty))
+    end
 end, false)
 
+-- Key mappings
 RegisterKeyMapping('togglebodycam', 'Toggle Bodycam Recording', 'keyboard', 'F10')
 RegisterKeyMapping('toggleduty', 'Toggle Duty Status', 'keyboard', 'F9')
