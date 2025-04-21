@@ -4,7 +4,7 @@ Config = {}
 Config.Framework = 'FRAMEWORK'
 
 -- Choose Time Duration
-Config.RecordingDuration = 100000
+Config.RecordingDuration = 1000000 -- SET TO HIGH NUMBER BECAUSE RECORD FUNCTION DOES NOT WORK!
 
 -- API Key from your FiveManage panel
 Config.FiveManageAPIKey = 'APIKEY' -- DOES NOT WORK
@@ -14,7 +14,7 @@ Config.RequireDuty = false
 Config.ToggleDutyCheck = false 
 
 -- Debug option
-Config.Debug = true -- SET TO FALSE FOR DISABLE
+Config.Debug = false -- SET TO TRUE FOR DEBUG
 
 -- Your server name / unit format
 Config.BodycamUnitPrefix = 'NIKLO BODYCAM'
